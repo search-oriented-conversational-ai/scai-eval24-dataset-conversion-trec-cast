@@ -11,7 +11,7 @@ cd ..
   > data/conversational-questions/corpus-treccast.jsonl
 ```
 
-
+Paper: https://arxiv.org/abs/2304.13874
 
 MSMARCO doc v1
 https://github.com/microsoft/MSMARCO-Document-Ranking/tree/d0a6c5b0ebdd1cd9dcf2b93fa593b7d56100d346
