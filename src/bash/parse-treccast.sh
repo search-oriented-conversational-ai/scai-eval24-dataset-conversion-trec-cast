@@ -16,7 +16,7 @@ cat $input \
               text: .manual_rewritten_utterance
             } ],
             response: (.passage + .response),
-            provenance: ([ (select(.canonical_result_id != null) | {id: .canonical_result_id}  ) ] + ((.provenance // []) | map({id: .})))
-          }))
+            provenance: ([ (select(.canonical_result_id != null) | {id: .canonical_result_id}  ) ] + ((.provenance // []) | map({id: ., dataset: (. | sub("_.*"; ""))})))
+          } | select(.response != null)))
         }'
 
