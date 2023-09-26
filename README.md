@@ -9,14 +9,14 @@ git clone git@github.com:johanneskiesel/treccastweb.git
 
 ## Convert Data
 ### 2022
-Adds text, title, and url of [MSMARCO doc v2](#msmarco-doc-v2) and [KILT](#kilt), as well as the [information needs](#information-needs-for-2022) to the dataset. Does not add data for Washington Post as the license of that dataset prevents open sharing.
+Adds text, title, and url of [MSMARCO doc v2](#msmarco-doc-v2) and [KILT](#kilt), as well as the [topics](#topics-for-2022) to the dataset. Does not add data for Washington Post as the license of that dataset prevents open sharing.
 
 ```bash
 ./src/bash/parse-treccast.sh \
   treccastweb/2022/2022_evaluation_topics_flattened_duplicated_v1.0.json 2022 \
   > data/trec-cast-2022.ndjson
 
-python src/python/add-by-id.py data/2022-information-needs-per-* data/provenance-* data/trec-cast-2022.ndjson \
+python3 src/python/add-by-id.py data/2022-topic-per-* data/provenance-* data/trec-cast-2022.ndjson \
   | sponge data/trec-cast-2022.ndjson
 ```
 
@@ -38,8 +38,8 @@ Converted dataset: `data/trec-cast-2021.ndjson`
 
 ## Resources
 
-### Information Needs for 2022
-Created for and described in the paper:
+### Topics for 2022
+Created for and described in the paper (as information needs):
 
 > Paul Owoicho, Ivan Sekulic, Mohammad Aliannejadi, Jeffrey Dalton and Fabio Crestani. Exploiting Simulated User Feedback for Conversational Search: Ranking, Rewriting, and Beyond. In Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2023), pages 632-642, 2023. ACM. DOI: 10.1145/3539618.3591683
 
